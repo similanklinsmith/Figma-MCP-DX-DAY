@@ -2,8 +2,7 @@ import React from 'react'
 import { images } from '../assets/images'
 import Button from './Button'
 
-const imgBorder = "http://localhost:3845/assets/c224ad3e545c24cfc712caf01b31066358e78b85.svg"
-const imgLine = "http://localhost:3845/assets/39e583e8e4c04c394ae43c5d7cf8c9a46aef39af.svg"
+const imgDivider = images['img-divider']
 
 // Result drinks (4 scenarios)
 const RESULTS = {
@@ -26,7 +25,7 @@ function getBaseFlavor(answers) {
 const Divider = () => (
   <div className="h-0 relative w-full">
     <div className="absolute inset-[-1px_0_0_0]">
-      <img alt="" className="block max-w-none size-full" src={imgLine} />
+      <img alt="" className="block max-w-none size-full" src={imgDivider} />
     </div>
   </div>
 )
@@ -43,7 +42,7 @@ export default function Summary({ answers, onRetake }) {
         {/* Top torn border */}
         <div className="h-[20px] relative w-full">
           <div className="absolute inset-[-5.58%_0_0_0]">
-            <img alt="" className="block max-w-none size-full" src={imgBorder} />
+            <img alt="" className="block max-w-none w-full" src={images['img-border']} />
           </div>
         </div>
 
@@ -134,7 +133,7 @@ export default function Summary({ answers, onRetake }) {
         <div className="flex items-center justify-center relative w-full" style={{ transform: 'scaleY(-1)' }}>
           <div className="h-[20px] relative w-full">
             <div className="absolute inset-[-5.58%_0_0_0]">
-              <img alt="" className="block max-w-none size-full" src={imgBorder} />
+              <img alt="" className="block max-w-none w-full" src={images['img-border']} />
             </div>
           </div>
         </div>

@@ -12,6 +12,11 @@ import imgIcyCrystalMatcha    from './img-the_icy_crystal_matcha.svg'
 import imgWarmEarthy          from './img-the_warm_earthy.svg'
 import imgSparklingCrystalFizz from './img-the_sparkling_crystal_fizz.svg'
 import imgCozyVelvetCocoa     from './img-the_cozy_velvet_cocoa.svg'
+import imgBorder              from './img-border.svg'
+import imgDivider             from './img-divider.svg'
+import imgTicket              from './img-ticket.svg'
+import imgStamp               from './img-stamp.svg'
+import imgAstrisk             from './img-astrisk.svg'
 
 export const images = {
   'img-pure_water':                 imgPureWater,
@@ -28,4 +33,9 @@ export const images = {
   'img-the_warm_earthy':            imgWarmEarthy,
   'img-the_sparkling_crystal_fizz': imgSparklingCrystalFizz,
   'img-the_cozy_velvet_cocoa':      imgCozyVelvetCocoa,
+  'img-border':                     imgBorder,
+  'img-divider':                    imgDivider,
+  'img-ticket':                     imgTicket,
+  'img-stamp':                      imgStamp,
+  'img-astrisk':                    imgAstrisk,
 }

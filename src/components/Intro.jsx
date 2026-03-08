@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import Button from './Button'
+import { images } from '../assets/images'
 
-const imgUnion = "http://localhost:3845/assets/bc665661c1e59f84278aa762ef97ca6fe57b1ab6.svg"
-const imgUnion1 = "http://localhost:3845/assets/4dccf55c7f757076d0f153f543d7adf2466a9077.svg"
-const imgLine2 = "http://localhost:3845/assets/39e583e8e4c04c394ae43c5d7cf8c9a46aef39af.svg"
-const imgDecAstrisk = "http://localhost:3845/assets/7c2c5912d2e7e7c3f8c6731b92197a0cc757e5ba.svg"
-const imgDecStamp = "http://localhost:3845/assets/02a242ee0b5ee72e8ea6048ab9d8b6e727121e6e.svg"
-const imgSubtract = "http://localhost:3845/assets/ee762a7401d270ba0597f28905bb4e590f943cf4.svg"
+const imgBorder = images['img-border']
+const imgDivider = images['img-divider']
+const imgAstrisk = images['img-astrisk']
+const imgStamp = images['img-stamp']
+const imgTicket = images['img-ticket']
 
 export default function Intro({ onStart }) {
     const [mainVisible, setMainVisible] = useState(false)
@@ -39,12 +39,7 @@ export default function Intro({ onStart }) {
                 {/* Top border */}
                 <div className={`h-[20px] relative w-full`}>
                     <div className="absolute h-[20px] left-0 top-0 w-full">
-                        <img alt="" className="absolute block max-w-none size-full" src={imgUnion} />
-                    </div>
-                    <div className="absolute h-[20px] left-[0.5px] top-0 w-[calc(100%-1px)]">
-                        <div className="absolute inset-[-5.58%_-0.13%_0_-0.13%]">
-                            <img alt="" className="block max-w-none size-full" src={imgUnion1} />
-                        </div>
+                        <img alt="" className="absolute block max-w-none w-full" src={imgBorder} />
                     </div>
                 </div>
                 <div className={`bg-[#fefefe] border-[#ece8e5] border-l border-r flex flex-col w-full min-h-[812px]`}>
@@ -74,7 +69,7 @@ export default function Intro({ onStart }) {
                         {/* Divider line */}
                         <div className="h-0 w-full relative">
                             <div className="absolute inset-[-1px_0_0_0]">
-                                <img alt="" className="block max-w-none size-full" src={imgLine2} />
+                                <img alt="" className="block max-w-none w-full" src={imgDivider} />
                             </div>
                         </div>
 
@@ -93,7 +88,7 @@ export default function Intro({ onStart }) {
                         {/* Divider line */}
                         <div className="h-0 w-full relative">
                             <div className="absolute inset-[-1px_0_0_0]">
-                                <img alt="" className="block max-w-none size-full" src={imgLine2} />
+                                <img alt="" className="block max-w-none w-full" src={imgDivider} />
                             </div>
                         </div>
 
@@ -109,12 +104,7 @@ export default function Intro({ onStart }) {
                     <div className="w-full">
                         <div className="h-[20px] relative w-full">
                             <div className="absolute h-[20px] left-0 top-0 w-full">
-                                <img alt="" className="absolute block max-w-none size-full" src={imgUnion} />
-                            </div>
-                            <div className="absolute h-[20px] left-[0.5px] top-0 w-[calc(100%-1px)]">
-                                <div className="absolute inset-[-5.58%_-0.13%_0_-0.13%]">
-                                    <img alt="" className="block max-w-none size-full" src={imgUnion1} />
-                                </div>
+                                <img alt="" className="absolute block max-w-none w-full" src={imgBorder} />
                             </div>
                         </div>
                     </div>
@@ -140,7 +130,7 @@ export default function Intro({ onStart }) {
                 {/* Decorative asterisk - top right */}
                 <div className={`absolute h-[92.551px] w-[95.889px] left-[90%] bottom-[70%] transition-opacity duration-300 delay-120 ${asteriskVisible ? 'opacity-100' : 'opacity-0'}`}>
                     <div className="absolute inset-[-10.03%_-9.65%_-14.64%_-11.38%]">
-                        <img alt="" className="block max-w-none size-full" src={imgDecAstrisk} />
+                        <img alt="" className="block max-w-none size-full" src={imgAstrisk} />
                     </div>
                 </div>
 
@@ -149,7 +139,7 @@ export default function Intro({ onStart }) {
                     <div className="flex-none rotate-[-9.93deg]">
                         <div className="h-[128px] relative w-[116px]">
                             <div className="absolute inset-[-6.25%_-6.9%]">
-                                <img alt="" className="block max-w-none size-full" src={imgDecStamp} />
+                                <img alt="" className="block max-w-none size-full" src={imgStamp} />
                             </div>
                         </div>
                     </div>
@@ -162,13 +152,13 @@ export default function Intro({ onStart }) {
                             <div className="flex-none rotate-[13.95deg]">
                                 <div className="h-[44.836px] relative w-[81.291px]">
                                     <div className="absolute inset-[-26.76%_-14.76%]">
-                                        <img alt="" className="block max-w-none size-full" src={imgSubtract} />
+                                        <img alt="" className="block max-w-none size-full" src={imgTicket} />
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="-translate-x-1/2 absolute flex h-[36.584px] items-center justify-center left-[44.99px] top-[13.78px] w-[40.96px]" style={{ "--transform-inner-width": "0", "--transform-inner-height": "0" }}>
-                            <div className="flex-none rotate-[13.95deg]">
+                            <div className="flex-none rotate-[26deg]">
                                 <div className="font-mono leading-[14.026px] text-[10.52px] text-center text-white whitespace-nowrap">
                                     <p className="mb-0">VIBE</p>
                                     <p>CODING</p>

@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Option from './Option'
+import { images } from '../assets/images'
 
-const imgUnion = "http://localhost:3845/assets/bc665661c1e59f84278aa762ef97ca6fe57b1ab6.svg"
-const imgUnion1 = "http://localhost:3845/assets/4dccf55c7f757076d0f153f543d7adf2466a9077.svg"
-const imgLine2 = "http://localhost:3845/assets/39e583e8e4c04c394ae43c5d7cf8c9a46aef39af.svg"
+const imgBorder = images['img-border']
+const imgDivider = images['img-divider']
 
 const ANIMATION_DURATION = 1000
 
@@ -140,13 +140,8 @@ export default function Question({ questionNumber, question, options, onSubmit, 
 
                 {/* Top border */}
                 <div className="h-[20px] relative w-full">
-                    <div className="absolute h-[20px] left-0 top-0 w-full">
-                        <img alt="" className="absolute block max-w-none size-full" src={imgUnion} />
-                    </div>
-                    <div className="absolute h-[20px] left-[0.5px] top-0 w-[calc(100%-1px)]">
-                        <div className="absolute inset-[-5.58%_-0.13%_0_-0.13%]">
-                            <img alt="" className="block max-w-none size-full" src={imgUnion1} />
-                        </div>
+                    <div className="absolute inset-[-5.58%_0_0_0]">
+                        <img alt="" className="block max-w-none w-full" src={imgBorder} />
                     </div>
                 </div>
 
@@ -190,7 +185,7 @@ export default function Question({ questionNumber, question, options, onSubmit, 
                     <div className="flex flex-col gap-6 items-center pb-6 px-6 w-full">
                         <div className="h-0 w-full relative">
                             <div className="absolute inset-[-1px_0_0_0]">
-                                <img alt="" className="block max-w-none size-full" src={imgLine2} />
+                                <img alt="" className="block max-w-none w-full" src={imgDivider} />
                             </div>
                         </div>
                         <button
@@ -204,16 +199,9 @@ export default function Question({ questionNumber, question, options, onSubmit, 
 
                 {/* Bottom border */}
                 <div className="flex items-center justify-center relative w-full" style={{ transform: "scaleY(-1)" }}>
-                    <div className="w-full">
-                        <div className="h-[20px] relative w-full">
-                            <div className="absolute h-[20px] left-0 top-0 w-full">
-                                <img alt="" className="absolute block max-w-none size-full" src={imgUnion} />
-                            </div>
-                            <div className="absolute h-[20px] left-[0.5px] top-0 w-[calc(100%-1px)]">
-                                <div className="absolute inset-[-5.58%_-0.13%_0_-0.13%]">
-                                    <img alt="" className="block max-w-none size-full" src={imgUnion1} />
-                                </div>
-                            </div>
+                    <div className="h-[20px] relative w-full">
+                        <div className="absolute inset-[-5.58%_0_0_0]">
+                            <img alt="" className="block max-w-none w-full" src={imgBorder} />
                         </div>
                     </div>
                 </div>

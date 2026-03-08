@@ -1,10 +1,10 @@
 import React from 'react'
 import Option from './Option'
 import Button from './Button'
+import { images } from '../assets/images'
 
-const imgUnion = "http://localhost:3845/assets/bc665661c1e59f84278aa762ef97ca6fe57b1ab6.svg"
-const imgUnion1 = "http://localhost:3845/assets/4dccf55c7f757076d0f153f543d7adf2466a9077.svg"
-const imgLine2 = "http://localhost:3845/assets/39e583e8e4c04c394ae43c5d7cf8c9a46aef39af.svg"
+const imgBorder = images['img-border']
+const imgDivider = images['img-divider']
 
 export default function Menu({ 
   title = "Title", 
@@ -22,12 +22,7 @@ export default function Menu({
       {/* Top border */}
       <div className="h-[20px] relative w-full" data-name="border" data-node-id="64:593">
         <div className="absolute h-[20px] left-0 top-0 w-full" data-name="Union" data-node-id="64:594">
-          <img alt="" className="w-full h-full block" src={imgUnion} />
-        </div>
-        <div className="absolute h-[20px] left-[0.5px] top-0" style={{ width: "calc(100% - 1px)" }} data-name="Union" data-node-id="64:595">
-          <div className="absolute inset-[-5.58%_-0.13%_0_-0.13%]">
-            <img alt="" className="block max-w-none w-full h-full" src={imgUnion1} />
-          </div>
+          <img alt="" className="w-full h-full block" src={imgBorder} />
         </div>
       </div>
 
@@ -73,7 +68,7 @@ export default function Menu({
             {/* Divider line */}
             <div className="h-0 w-full relative" data-node-id="64:591">
               <div className="absolute inset-[-1px_0_0_0]">
-                <img alt="" className="block max-w-none w-full" src={imgLine2} />
+                <img alt="" className="block max-w-none w-full" src={imgDivider} />
               </div>
             </div>
 
@@ -94,12 +89,7 @@ export default function Menu({
         <div className="w-full">
           <div className="h-[20px] relative w-full" data-name="border" data-node-id="64:596">
             <div className="absolute h-[20px] left-0 top-0 w-full" data-name="Union" data-node-id="64:597">
-              <img alt="" className="w-full h-full block" src={imgUnion} />
-            </div>
-            <div className="absolute h-[20px] left-[0.5px] top-0" style={{ width: "calc(100% - 1px)" }} data-name="Union" data-node-id="64:598">
-              <div className="absolute inset-[-5.58%_-0.13%_0_-0.13%]">
-                <img alt="" className="block max-w-none w-full h-full" src={imgUnion1} />
-              </div>
+              <img alt="" className="w-full h-full block" src={imgBorder} />
             </div>
           </div>
         </div>
