@@ -77,7 +77,7 @@ export default function Intro({ onStart }) {
                         <div className="flex flex-col gap-2 items-start leading-5 text-[#0e0e0e] text-sm w-full">
                             <div className="flex gap-6 items-start w-full font-mono text-xs">
                                 <p className="flex-1 text-left">ISSUED AT</p>
-                                <p className="flex-1 text-right">10 Mar, DX DAY 2026</p>
+                                <p className="flex-1 text-right">11 Mar, DX DAY 2026</p>
                             </div>
                             <div className="flex gap-6 items-start w-full text-xs">
                                 <p className="flex-1 font-mono text-left">DEVELOPED BY</p>

@@ -5,7 +5,7 @@ import { images } from '../assets/images'
 const imgBorder = images['img-border']
 const imgDivider = images['img-divider']
 
-const ANIMATION_DURATION = 1000
+const ANIMATION_DURATION = 800
 
 // Build a filled path whose width follows sin(t/2) — 0 at t=0, peak at t=π, 0 at t=2π
 function buildTaperedPath(cx, cy, rx, ry, maxWidth, n = 80) {
