@@ -17,6 +17,8 @@ import imgDivider             from './img-divider.svg'
 import imgTicket              from './img-ticket.svg'
 import imgStamp               from './img-stamp.svg'
 import imgAstrisk             from './img-astrisk.svg'
+import imgSweetnessActive    from './img-sweetness_active.svg'
+import imgSweetnessInactive  from './img-sweetness_inactive.svg'
 
 export const images = {
   'img-pure_water':                 imgPureWater,
@@ -38,4 +40,6 @@ export const images = {
   'img-ticket':                     imgTicket,
   'img-stamp':                      imgStamp,
   'img-astrisk':                    imgAstrisk,
+  'img-sweetness_active':           imgSweetnessActive,
+  'img-sweetness_inactive':         imgSweetnessInactive,
 }

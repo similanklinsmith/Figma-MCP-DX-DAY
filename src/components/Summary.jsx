@@ -32,6 +32,29 @@ function getBaseFlavor(answers) {
   return answers[2] === 'A' ? 'A' : 'B'
 }
 
+function getSweetnessLevel(answers) {
+  let level = answers[3] === 'A' ? 1 : 3
+  if (answers[1] === 'B') level += 1
+  if (answers[4] === 'B') level += 1
+  return level
+}
+
+const SweetnessBar = ({ level }) => (
+  <div className="flex gap-2 items-center w-full">
+    <p className="flex-1 font-mono text-[#0e0e0e] text-[14px] leading-5">Sweetness</p>
+    <div className="flex gap-2 items-center">
+      {[1, 2, 3, 4, 5].map(i => (
+        <img
+          key={i}
+          alt=""
+          className="w-[17px] h-[16px]"
+          src={i <= level ? images['img-sweetness_active'] : images['img-sweetness_inactive']}
+        />
+      ))}
+    </div>
+  </div>
+)
+
 const Divider = () => (
   <div className="h-0 relative w-full">
     <div className="absolute inset-[-1px_0_0_0]">
@@ -114,6 +137,7 @@ export default function Summary({ answers, onRetake }) {
   const baseFlavor = getBaseFlavor(answers)
   const q5 = answers[5] || 'A'
   const result = RESULTS[`${baseFlavor}-${q5}`]
+  const sweetnessLevel = getSweetnessLevel(answers)
 
   // Slip height grows via setInterval (10px / 80ms = ~125px/s)
   const [slipHeight, setSlipHeight] = useState(0)
@@ -276,15 +300,15 @@ export default function Summary({ answers, onRetake }) {
             }}
           >
 
-            {/* Top torn border — revealed last (reverseIndex 13) */}
-            <SlipRow reverseIndex={13}>
+            {/* Top torn border — revealed last (reverseIndex 14) */}
+            <SlipRow reverseIndex={14}>
               <TornBorder />
             </SlipRow>
 
             {/* Card body */}
             <div className="bg-[#fefefe] border-[#ece8e5] border-l border-r flex flex-col w-full">
 
-              <SlipRow reverseIndex={12}>
+              <SlipRow reverseIndex={13}>
                 <div className="flex items-center justify-center p-6">
                   <p className="font-mono text-[#0e0e0e] text-sm text-center">
                     **HAVE GOOD DAY**
@@ -292,18 +316,21 @@ export default function Summary({ answers, onRetake }) {
                 </div>
               </SlipRow>
 
-              <div className="flex flex-col gap-6 items-center pb-8 pt-2 px-6 w-full">
+              <div className="flex flex-col gap-6 items-center pb-8 pt-6 px-6 w-full">
 
-                <SlipRow reverseIndex={11}>
+                <SlipRow reverseIndex={12}>
                   <div className="w-[200px] h-[200px] flex items-center justify-center overflow-hidden shrink-0 mx-auto">
                     <img src={images[result.image]} alt={result.name} className="w-full h-full object-contain" />
                   </div>
                 </SlipRow>
 
-                <SlipRow reverseIndex={10}>
-                  <div className="flex flex-col gap-2 items-start text-[#0e0e0e] w-full">
-                    <p className="font-mono text-[20px] uppercase leading-6 w-full">{result.name}</p>
-                    <p className="font-sans text-[14px] leading-5 w-full">{result.description}</p>
+                <SlipRow reverseIndex={11}>
+                  <div className="flex flex-col gap-4 items-start w-full">
+                    <div className="flex flex-col gap-2 items-start text-[#0e0e0e] w-full">
+                      <p className="font-mono text-[20px] uppercase leading-6 w-full">{result.name}</p>
+                      <p className="font-sans text-[14px] leading-5 w-full">{result.description}</p>
+                    </div>
+                    <SweetnessBar level={sweetnessLevel} />
                   </div>
                 </SlipRow>
 
@@ -312,14 +339,14 @@ export default function Summary({ answers, onRetake }) {
                 <SlipRow reverseIndex={8}>
                   <div className="flex flex-col gap-2 items-start w-full text-[#0e0e0e]">
                     <div className="flex gap-3 items-start w-full font-mono text-[14px]">
-                      <p className="w-[40px]">QTY</p>
+                      <p className="w-[60px]">QTY</p>
                       <p className="flex-1">ITEM</p>
-                      <p className="w-[72px] text-right">AMT(BAHT)</p>
+                      <p className="w-[80px] text-right">AMT(BAHT)</p>
                     </div>
                     <div className="flex gap-3 items-start w-full font-mono text-[14px]">
-                      <p className="w-[40px]">01</p>
+                      <p className="w-[60px]">01</p>
                       <p className="flex-1">{result.name}</p>
-                      <p className="w-[72px] text-right">{result.price.toFixed(2)}</p>
+                      <p className="w-[80px] text-right">{result.price.toFixed(2)}</p>
                     </div>
                   </div>
                 </SlipRow>
